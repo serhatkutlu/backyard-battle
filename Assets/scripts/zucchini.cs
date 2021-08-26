@@ -21,7 +21,7 @@ public class zucchini : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-            print(5);
+            
             collision.GetComponent<healthy>().dealdamage(50);
         }
     }

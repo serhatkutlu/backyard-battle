@@ -21,6 +21,7 @@ IEnumerator Start ()
 
     private void spawnattacker()
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        walking walk= Instantiate(enemy, transform.position, transform.rotation);
+        walk.transform.parent = transform;
     }
 }

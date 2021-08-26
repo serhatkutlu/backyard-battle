@@ -11,7 +11,7 @@ public class healthy : MonoBehaviour
 public void dealdamage(float damage)
     {
         health -= damage;
-        print(health);
+        
         if (health<=0)
         {
             triggerdeadvfx();
