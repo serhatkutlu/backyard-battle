@@ -7,7 +7,7 @@ public class spawner : MonoBehaviour
     [Range (1,5)]
     [SerializeField] float mindelay,maxdelay;
     bool spawn=true;
-    [SerializeField] walking enemy;
+    [SerializeField] walking[] enemyarray;
 
 IEnumerator Start ()
     {
@@ -18,10 +18,20 @@ IEnumerator Start ()
         }
 
     }
+    public void stopspawn()
+    {
+        spawn = false;
+    }
 
     private void spawnattacker()
     {
-        walking walk= Instantiate(enemy, transform.position, transform.rotation);
+        var enemy = enemyarray[Random.Range(0, enemyarray.Length)];
+        spawnenemy(enemy);
+    }
+    private void spawnenemy (walking myenemy)
+    {
+        walking walk = Instantiate(myenemy, transform.position, transform.rotation);
         walk.transform.parent = transform;
     }
+
 }

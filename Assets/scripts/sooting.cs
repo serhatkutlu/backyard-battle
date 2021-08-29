@@ -7,7 +7,7 @@ public class sooting : MonoBehaviour
 {
     [SerializeField]
     GameObject zucchini_prefab;
-    [SerializeField] float speed;
+   
     spawner MyLaneSpawner;
     Animator cactusanim;
     private void Start()
@@ -21,11 +21,14 @@ public class sooting : MonoBehaviour
         spawner[] attackers = GameObject.FindObjectsOfType<spawner>();
         foreach (var attacker in attackers)
         {
-            bool ÝsCloseEnought = Mathf.Abs( attacker.transform.position.y-0.2f - transform.position.y) >= Mathf.Epsilon;                        
-            print(ÝsCloseEnought);
+            print(attacker.transform.position.y-0.2);
+            print(transform.position.y);
+            bool ÝsCloseEnought = Mathf.Abs( attacker.transform.position.y-0.2f- transform.position.y) <= Mathf.Epsilon+0.1f;                        
+            
             if (ÝsCloseEnought)
             {
-                print(2);
+                
+
                 MyLaneSpawner = attacker;
             }
         }
@@ -37,21 +40,26 @@ public class sooting : MonoBehaviour
         {
             cactusanim.SetBool("ÝsAttacking",true);
            
-        }                       
+        }
         else
         {
             cactusanim.SetBool("ÝsAttacking", false);
         }
+        
+            
+        
   
     }
     private bool ÝsAttackerÝnLane()
     {
         if (MyLaneSpawner.transform.childCount<=0)
         {
+           
             return false;
         }
         else
         {
+            print(MyLaneSpawner);
             return true;
         }
 

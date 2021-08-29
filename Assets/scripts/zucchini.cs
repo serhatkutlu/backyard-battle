@@ -19,7 +19,7 @@ public class zucchini : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.GetComponent<walking>())
         {
             
             collision.GetComponent<healthy>().dealdamage(50);
