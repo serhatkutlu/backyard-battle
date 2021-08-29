@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 1725506695357236960}
   - component: {fileID: 1725506695357236963}
   - component: {fileID: -6521023276848844751}
-  - component: {fileID: 1728840645}
-  - component: {fileID: 3318367944632956376}
-  - component: {fileID: 5880431039678730847}
   m_Layer: 0
   m_Name: cactus
   m_TagString: Untagged
@@ -101,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zucchini_prefab: {fileID: 5954198560127358697, guid: 1c3ce807ad4af99429e3962f1abb8ba5, type: 3}
+  speed: 0
 --- !u!95 &1725506695357236963
 Animator:
   serializedVersion: 3
@@ -132,65 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e08d7b9591b7147b91c676a8d351f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starcost: 100
---- !u!114 &1728840645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725506695357236988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2292fe9fb5f5585468b25d5247152c3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  deadvfx: {fileID: 0}
---- !u!61 &3318367944632956376
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725506695357236988}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.000000059604645, y: 0.009446144}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3083333, y: 1.05}
-    newSize: {x: 1.57, y: 1.26}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9304892, y: 0.8799701}
-  m_EdgeRadius: 0
---- !u!50 &5880431039678730847
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725506695357236988}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  startcost: 100

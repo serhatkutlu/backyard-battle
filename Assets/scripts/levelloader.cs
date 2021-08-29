@@ -26,24 +26,8 @@ IEnumerator  startlevel()
         yield return new WaitForSeconds(waittotime);
         nextlevelload();
     }
-    public void nextlevelload()
+    private void nextlevelload()
     {
         SceneManager.LoadScene(activescene + 1);
-    }
-    public void tryAgain()
-    {
-        SceneManager.LoadScene(activescene );
-    }
-    public void mainmenu()
-    {
-        SceneManager.LoadScene("startscreen");
-    }
-    public void losescreen()
-    {
-        SceneManager.LoadScene("loseScreen");
-    }
-    public void Quit()
-    {
-        Application.Quit();
     }
 }

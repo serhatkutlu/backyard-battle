@@ -93,8 +93,6 @@ GameObject:
   - component: {fileID: 37461148123319553}
   - component: {fileID: 37461148123319552}
   - component: {fileID: 4067688192213290940}
-  - component: {fileID: 4745757026408929258}
-  - component: {fileID: 807092420645834566}
   m_Layer: 0
   m_Name: trophy cut
   m_TagString: Untagged
@@ -150,47 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e08d7b9591b7147b91c676a8d351f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starcost: 100
---- !u!114 &4745757026408929258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37461148123319555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2292fe9fb5f5585468b25d5247152c3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  deadvfx: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
---- !u!61 &807092420645834566
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37461148123319555}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.01008749}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.979825}
-  m_EdgeRadius: 0
+  startcost: 100
 --- !u!1 &37461148898990069
 GameObject:
   m_ObjectHideFlags: 0
