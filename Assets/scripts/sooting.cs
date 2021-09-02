@@ -7,25 +7,38 @@ public class sooting : MonoBehaviour
 {
     [SerializeField]
     GameObject zucchini_prefab;
-    [SerializeField] float speed;
+   
     spawner MyLaneSpawner;
     Animator cactusanim;
+    GameObject projectile;
+    const string projectileParentName = "projectile";
     private void Start()
     {
         SetAttackerSpawners();
         cactusanim = GetComponent<Animator>();
+        createParrentProjectile();
     }
-
+    void createParrentProjectile()
+    {
+        projectile = GameObject.Find(projectileParentName);
+        if (!projectile)
+        {
+            projectile = new GameObject(projectileParentName);
+        }
+    }
     private void SetAttackerSpawners()
     {
         spawner[] attackers = GameObject.FindObjectsOfType<spawner>();
         foreach (var attacker in attackers)
         {
-            bool ÝsCloseEnought = Mathf.Abs( attacker.transform.position.y-0.2f - transform.position.y) >= Mathf.Epsilon;                        
-            print(ÝsCloseEnought);
+
+            print(transform.position.y);
+            bool ÝsCloseEnought = Mathf.Abs( attacker.transform.position.y-0.2f- transform.position.y) <= Mathf.Epsilon+0.1f;                        
+            
             if (ÝsCloseEnought)
             {
-                print(2);
+                
+
                 MyLaneSpawner = attacker;
             }
         }
@@ -37,21 +50,26 @@ public class sooting : MonoBehaviour
         {
             cactusanim.SetBool("ÝsAttacking",true);
            
-        }                       
+        }
         else
         {
             cactusanim.SetBool("ÝsAttacking", false);
         }
+        
+            
+        
   
     }
     private bool ÝsAttackerÝnLane()
     {
         if (MyLaneSpawner.transform.childCount<=0)
         {
+           
             return false;
         }
         else
         {
+            print(MyLaneSpawner);
             return true;
         }
 
@@ -59,7 +77,8 @@ public class sooting : MonoBehaviour
     }
     public void soot(float damage)
     {
-        Instantiate(zucchini_prefab,transform.position,transform.rotation);
+        var projectileÝnstant =Instantiate(zucchini_prefab,transform.position,transform.rotation);
+        projectileÝnstant.transform.SetParent(projectile.transform);
        
     }
 }

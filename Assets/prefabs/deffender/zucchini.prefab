@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_speed: 2.3
   rotate_speed: -152
+  damage: 50
 --- !u!50 &6415053666172301697
 Rigidbody2D:
   serializedVersion: 4

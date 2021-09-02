@@ -5,8 +5,22 @@ using UnityEngine;
 
 public class defender_spawner : MonoBehaviour
 {
+    const string deffender_parent = "Deffender";
+    GameObject deffenderParrent;
 
     deffender deffender;
+    private void Start()
+    {
+        createParrentDeffender();
+    }
+    void createParrentDeffender()
+    {
+        deffenderParrent = GameObject.Find(deffender_parent);
+        if (!deffenderParrent)
+        {
+            deffenderParrent = new GameObject(deffender_parent);
+        }
+    }
     private void OnMouseDown()
     {
         AttemptTOplaceDeffenderAt(getsquareclick());
@@ -43,6 +57,7 @@ public class defender_spawner : MonoBehaviour
 
     private void spawndefender(Vector2 posision)
     {
-        deffender cactus = Instantiate(deffender,posision,Quaternion.identity);
+        deffender deffenderİnstant = Instantiate(deffender,posision,Quaternion.identity);
+        deffenderİnstant.transform.SetParent(deffenderParrent.transform);
     }
 }

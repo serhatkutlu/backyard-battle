@@ -5,7 +5,7 @@ using UnityEngine;
 public class zucchini : MonoBehaviour
 {
 
-    [SerializeField] float move_speed, rotate_speed;
+    [SerializeField] float move_speed, rotate_speed,damage=50;
 
     private void Update()
     {
@@ -19,10 +19,11 @@ public class zucchini : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.GetComponent<walking>())
         {
             
-            collision.GetComponent<healthy>().dealdamage(50);
+            collision.GetComponent<healthy>().dealdamage(damage);
+            Destroy(this.gameObject);
         }
     }
 

@@ -11,6 +11,7 @@ public class levelloader : MonoBehaviour
     int activescene;
     void Start()
     {
+        PlayerPrefs.SetInt("level index",1);
         activescene = SceneManager.GetActiveScene().buildIndex;
         if (activescene==0)
         {
@@ -26,8 +27,33 @@ IEnumerator  startlevel()
         yield return new WaitForSeconds(waittotime);
         nextlevelload();
     }
-    private void nextlevelload()
+    public void nextlevelload()
     {
-        SceneManager.LoadScene(activescene + 1);
+        int level = playerprefbs.setLevel();
+        SceneManager.LoadScene("level"+level);
+    }
+    public void startbutton()
+    {
+        SceneManager.LoadScene("level"+playerprefbs.getLevel());
+    }
+    public void tryAgain()
+    {
+        SceneManager.LoadScene(activescene );
+    }
+    public void mainmenu()
+    {
+        SceneManager.LoadScene("startscreen");
+    }
+    public void losescreen()
+    {
+        SceneManager.LoadScene("loseScreen");
+    }
+    public void optionscene()
+    {
+        SceneManager.LoadScene("optionscreen");
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
