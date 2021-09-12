@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MUSİCPLAYER : MonoBehaviour
 {
+    [SerializeField] AudioClip mainmusic, warmusic;
     private void Awake()
     { MUSİCPLAYER[] list = FindObjectsOfType<MUSİCPLAYER>();
         if (list.Length>1)
@@ -25,4 +26,13 @@ public void setvolume(float vol)
     {
         GetComponent<AudioSource>().volume = vol;
     }
+    public void warAudioClip()
+    {
+        GetComponent<AudioSource>().clip = warmusic;
+    }
+    public void mainAudioClip()
+    {
+        GetComponent<AudioSource>().clip = mainmusic;
+    }
+
 }

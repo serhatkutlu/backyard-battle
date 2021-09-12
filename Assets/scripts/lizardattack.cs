@@ -13,6 +13,10 @@ public class lizardattack : MonoBehaviour
             GetComponent<walking>().attack(otherobj);
         }
     }
- 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        GetComponent<Animator>().SetTrigger("ÝsAttacking");
+    }
+   
 
 }

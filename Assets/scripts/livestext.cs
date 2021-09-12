@@ -24,6 +24,7 @@ public class livestext : MonoBehaviour
         updatedisplay();
         if (lives<=0)
         {
+            FindObjectOfType<MUSÝCPLAYER>().GetComponent<AudioSource>().Stop();
             GameObject.FindObjectOfType<levelcontroller>().loselabel.SetActive(true);
             Time.timeScale = 0;
         }

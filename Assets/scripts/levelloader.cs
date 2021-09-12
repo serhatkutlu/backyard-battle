@@ -11,12 +11,14 @@ public class levelloader : MonoBehaviour
     int activescene;
     void Start()
     {
-        PlayerPrefs.SetInt("level index",1);
+
+        
         activescene = SceneManager.GetActiveScene().buildIndex;
         if (activescene==0)
         {
             StartCoroutine(startlevel());
         }
+        
         
     }
 
@@ -25,15 +27,24 @@ public class levelloader : MonoBehaviour
 IEnumerator  startlevel()
     {
         yield return new WaitForSeconds(waittotime);
-        nextlevelload();
+        mainmenu();
     }
     public void nextlevelload()
     {
         int level = playerprefbs.setLevel();
+        //check if next level exists level loaded
+        if (SceneManager.sceneCountInBuildSettings==level+2)
+        {
+            level = playerprefbs.returnBeginLevel();
+        }
+        
+        
         SceneManager.LoadScene("level"+level);
+      
     }
     public void startbutton()
     {
+       
         SceneManager.LoadScene("level"+playerprefbs.getLevel());
     }
     public void tryAgain()
@@ -42,6 +53,15 @@ IEnumerator  startlevel()
     }
     public void mainmenu()
     {
+
+        MUSÝCPLAYER musicplayer = FindObjectOfType<MUSÝCPLAYER>();
+        if (musicplayer)
+        {
+            musicplayer.mainAudioClip();
+            musicplayer.GetComponent<AudioSource>().Play();
+        }
+        
+
         SceneManager.LoadScene("startscreen");
     }
     public void losescreen()

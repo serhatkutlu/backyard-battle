@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b17cdccab342540850353bc230f7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zucchini_prefab: {fileID: 5954198560127358697, guid: 1c3ce807ad4af99429e3962f1abb8ba5, type: 3}
+  ammunition: {fileID: 5954198560127358697, guid: 1c3ce807ad4af99429e3962f1abb8ba5, type: 3}
 --- !u!95 &1725506695357236963
 Animator:
   serializedVersion: 3

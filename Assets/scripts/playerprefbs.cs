@@ -23,8 +23,9 @@ public class playerprefbs : MonoBehaviour
     }
     public static void setDifficult(float value)
     {
-        if (value <= maxdifficult && value > mindifficult)
+        if (value <= maxdifficult && value >= mindifficult)
         {
+            print(true);
             PlayerPrefs.SetFloat(difficult_key, value);
         }
     }
@@ -49,6 +50,11 @@ public class playerprefbs : MonoBehaviour
         {
             PlayerPrefs.SetInt(level, 1);
         }
+        return PlayerPrefs.GetInt(level);
+    }
+    public static int returnBeginLevel()
+    {
+        PlayerPrefs.SetInt(level, 1);
         return PlayerPrefs.GetInt(level);
     }
  

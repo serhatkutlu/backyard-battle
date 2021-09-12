@@ -15,7 +15,7 @@ public class livecollider : MonoBehaviour
         if (collision.GetComponent<walking>())
         {
             livestext.spendslives(1);
-            Destroy(collision);
+            Destroy(collision.gameObject);
         }
     }
 }

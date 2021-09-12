@@ -5,21 +5,37 @@ using UnityEngine.UI;
 public class gametimer : MonoBehaviour
 {
     [Tooltip("our level timer in seconds")]
-    [SerializeField] int time = 10;
+    [SerializeField] float time = 10;
+    
+    bool starttime=false;
     bool triggeredLevelFinished;
+    bool timefinish;
     private void Update()
     {
         if (triggeredLevelFinished)
         {
             return;
         }
-        GetComponent<Slider>().value = Time.timeSinceLevelLoad / time;
-        bool timefinish = Time.timeSinceLevelLoad >= time;
+        if (!starttime)
+        {
+            time += Time.deltaTime; 
+        }
+        else
+        {
+            GetComponent<Slider>().value = Time.timeSinceLevelLoad / time;
+             timefinish = Time.timeSinceLevelLoad >= time;
+        }
+        
+       
 
         if (timefinish)
         {
             FindObjectOfType<levelcontroller>().leveltimerfinished();
             triggeredLevelFinished = true;
         }
+    }
+    public void startime()
+    {
+        starttime = true;
     }
 }

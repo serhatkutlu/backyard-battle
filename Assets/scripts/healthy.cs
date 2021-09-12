@@ -6,7 +6,7 @@ using UnityEngine;
 public class healthy : MonoBehaviour
 {
     [SerializeField] float health = 100;
-    [SerializeField]GameObject deadvfx;
+
 
 public void dealdamage(float damage)
     {
@@ -14,14 +14,17 @@ public void dealdamage(float damage)
         
         if (health<=0)
         {
-            triggerdeadvfx();
-            Destroy(gameObject);
+            if (GetComponent<attacker>())
+            {
+                GetComponent<Animator>().SetTrigger("dead");
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+           
         }
     }
 
-    private void triggerdeadvfx()
-    {
-        if (!deadvfx) { return; }
-        Instantiate(deadvfx,transform.position,transform.rotation);
-    }
+
 }

@@ -15,34 +15,22 @@ public class walking : MonoBehaviour
         levelcontroller=GameObject.FindObjectOfType<levelcontroller>();
         levelcontroller.attackerSpawner();
     }
-    private void OnDestroy()
-    {
-        levelcontroller.attackerKiller();
-
-    }
+ 
     // Update is called once per frame
     void Update()
     {
         transform.Translate (Vector2.left * eventspeed*Time.deltaTime );
-        if (!currenttarget)
-        {
-            if (transform.GetComponent<lizardattack>())
-            {
-                GetComponent<Animator>().SetBool("lizardattack", false);
-            }
-           
-        }
+
     }
     public void animationspeed(float speed)
     {
         eventspeed = speed;
     }
     public void attack(GameObject target)
-    {
-        if (transform.GetComponent<lizardattack>())
-        {
-            GetComponent<Animator>().SetBool("lizardattack", true);
-        }
+    { 
+       GetComponent<Animator>().SetTrigger("ÝsAttacking");
+        
+
         
         currenttarget = target;
     }
@@ -58,4 +46,5 @@ public class walking : MonoBehaviour
         
         
     }
+
 }

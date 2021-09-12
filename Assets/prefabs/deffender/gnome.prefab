@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4050238689743747316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7221865884453199641}
+  m_Layer: 0
+  m_Name: gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7221865884453199641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050238689743747316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.164, y: -0.044, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5054783047296020870}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5054783045667996802
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +146,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 5054783045667996803}
+  - {fileID: 7221865884453199641}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b17cdccab342540850353bc230f7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zucchini_prefab: {fileID: 1421045142586183102, guid: 9f592df7d4e442247b6aa3c6d589c8ae, type: 3}
+  ammunition: {fileID: 8091290312968249226, guid: ca1966ec401fd7d4395bbf4a72f567ae, type: 3}
+  gun: {fileID: 7221865884453199641}
 --- !u!61 &5054783047296020868
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,7 +177,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.018811345}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -156,7 +188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.9623773}
   m_EdgeRadius: 0
 --- !u!114 &5054783047296020891
 MonoBehaviour:
@@ -170,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e08d7b9591b7147b91c676a8d351f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starcost: 100
+  starcost: 200
 --- !u!95 &5054783047296020890
 Animator:
   serializedVersion: 3
@@ -202,8 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2292fe9fb5f5585468b25d5247152c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  deadvfx: {fileID: 0}
+  health: 150
 --- !u!50 &-6522386198839292002
 Rigidbody2D:
   serializedVersion: 4

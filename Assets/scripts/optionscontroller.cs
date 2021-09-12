@@ -26,6 +26,8 @@ public class optionscontroller : MonoBehaviour
         {
             musicPlayer.setvolume(volume_slider.value);
         }
+
+        
     }
     public void saveAndExit()
     {

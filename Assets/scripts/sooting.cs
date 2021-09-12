@@ -6,8 +6,9 @@ using UnityEngine;
 public class sooting : MonoBehaviour
 {
     [SerializeField]
-    GameObject zucchini_prefab;
-   
+    GameObject ammunition;
+    [SerializeField] Transform gun;
+    
     spawner MyLaneSpawner;
     Animator cactusanim;
     GameObject projectile;
@@ -32,8 +33,8 @@ public class sooting : MonoBehaviour
         foreach (var attacker in attackers)
         {
 
-            print(transform.position.y);
-            bool ÝsCloseEnought = Mathf.Abs( attacker.transform.position.y-0.2f- transform.position.y) <= Mathf.Epsilon+0.1f;                        
+
+            bool ÝsCloseEnought = Mathf.Abs( attacker.transform.position.y- transform.position.y) <= Mathf.Epsilon+0.1f;                        
             
             if (ÝsCloseEnought)
             {
@@ -62,22 +63,31 @@ public class sooting : MonoBehaviour
     }
     private bool ÝsAttackerÝnLane()
     {
-        if (MyLaneSpawner.transform.childCount<=0)
+        if (MyLaneSpawner)
         {
-           
-            return false;
+            if (MyLaneSpawner.transform.childCount <= 0)
+            {
+
+                return false;
+            }
+            else
+            {
+
+                return true;
+            }
         }
         else
         {
-            print(MyLaneSpawner);
-            return true;
+            return false;
         }
+       
+       
 
 
     }
-    public void soot(float damage)
+    public void soot()
     {
-        var projectileÝnstant =Instantiate(zucchini_prefab,transform.position,transform.rotation);
+        var projectileÝnstant =Instantiate(ammunition,gun.position,transform.rotation);
         projectileÝnstant.transform.SetParent(projectile.transform);
        
     }

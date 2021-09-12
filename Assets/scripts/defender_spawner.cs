@@ -42,10 +42,10 @@ public class defender_spawner : MonoBehaviour
     Vector2 getsquareclick()
     {
         Vector2 clickpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        print(clickpos);
+
         
         clickpos = snaptogrid(clickpos);
-        print(clickpos);
+
         return clickpos;
     }
     Vector2 snaptogrid(Vector2 posision)
